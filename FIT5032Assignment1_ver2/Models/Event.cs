@@ -11,6 +11,7 @@ namespace FIT5032Assignment1_ver2.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(60, MinimumLength = 3)]
         public String EventName { set; get; }
 
         public String Disciption { get; set; }

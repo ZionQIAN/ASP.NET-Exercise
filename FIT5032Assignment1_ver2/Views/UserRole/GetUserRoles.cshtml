@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewBag.Title = "GetUserRoles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User's Roles</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <label class="control-label col-md-2">User Name</label>
+                <br>
+                @Html.Editor("UserName", new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class=" col-md-offset-2 col-md-10">
+                <input type="submit" value="Get Roles" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+@if (ViewBag.RolesForTheUser != null)
+{
+    <div style="background-color: red">
+        <h3>Roles List for the User</h3>
+        <ol>
+            @foreach (string role in ViewBag.RolesForTheUser)
+            {
+                <li>@role</li>
+            }
+        </ol>
+    </div>
+}
+
+<td>
+    @Html.ActionLink("Back", "Index", "UserRole") 
+
+</td>

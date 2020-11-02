@@ -36,6 +36,8 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // GET: Events/Create
+
+        [Authorize (Roles = "Admin, CourseProvider")]
         public ActionResult Create()
         {
             return View();
@@ -45,6 +47,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin, CourseProvider")]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,EventName,Disciption,Color")] Event @event)
         {
@@ -59,6 +62,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // GET: Events/Edit/5
+        [Authorize(Roles = "Admin, CourseProvider")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -77,6 +81,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize(Roles = "Admin, CourseProvider")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,EventName,Disciption,Color")] Event @event)
         {
@@ -90,6 +95,8 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // GET: Events/Delete/5
+
+        [Authorize(Roles = "Admin, CourseProvider")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -106,6 +113,7 @@ namespace FIT5032Assignment1_ver2.Controllers
 
         // POST: Events/Delete/5
         [HttpPost, ActionName("Delete")]
+        [Authorize(Roles = "Admin, CourseProvider")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {

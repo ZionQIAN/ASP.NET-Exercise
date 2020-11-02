@@ -36,6 +36,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // GET: Courses/Create
+        [Authorize(Roles = "Admin,CourseProvider")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +47,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,CourseProvider")]
         public ActionResult Create([Bind(Include = "Id,CourseName,Discription,Image")] Course course)
         {
             if (ModelState.IsValid)
@@ -59,6 +61,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // GET: Courses/Edit/5
+        [Authorize(Roles = "Admin,CourseProvider")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +81,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,CourseProvider")]
         public ActionResult Edit([Bind(Include = "Id,CourseName,Discription,Image")] Course course)
         {
             if (ModelState.IsValid)
@@ -90,6 +94,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // GET: Courses/Delete/5
+        [Authorize(Roles = "Admin,CourseProvider")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -107,6 +112,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         // POST: Courses/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin,CourseProvider")]
         public ActionResult DeleteConfirmed(int id)
         {
             Course course = db.Course.Find(id);

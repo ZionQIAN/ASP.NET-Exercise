@@ -23,10 +23,25 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Student", "Index", "Students")</li>
                     <li>@Html.ActionLink("Course", "Index", "Courses")</li>
                     <li>@Html.ActionLink("Event", "Index", "Events")</li>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("CourseEvent", "Index", "CourseEvents")</li>
+                        <li>@Html.ActionLink("LikedCourses", "Index", "LikeCourses")</li>
+                        <li>@Html.ActionLink("LoginedCourses", "Index", "LoginedCourses")</li>
+                    }
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        if (User.IsInRole("Admin"))
+                        {
+                            <li>@Html.ActionLink("Student", "Index", "Students")</li>
+                            <li>@Html.ActionLink("AllRole", "Index", "Roles")</li>
+                            <li>@Html.ActionLink("ManageUserRole", "Index", "UserRole")</li>
+                        }
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

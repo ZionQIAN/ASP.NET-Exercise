@@ -19,12 +19,5 @@ namespace FIT5032Assignment1_ver2.Controllers
 
             return View();
         }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Contact us";
-
-            return View();
-        }
     }
 }

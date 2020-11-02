@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -8,7 +9,8 @@ namespace FIT5032Assignment1_ver2.Models
     public class CourseEvent
     {
         public int Id { get; set; }
-
+        [Required]
+        [DataType(DataType.DateTime)]
         public DateTime CourseTime { get; set; }
 
         public String Address { get; set; }

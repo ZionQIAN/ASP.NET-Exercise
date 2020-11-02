@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>User Role Index</h2>
+
+<div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Add Role To User", "AddRoleToUser", "UserRole")</li>
+        <li>@Html.ActionLink("Get User Role", "GetUserRoles", "UserRole")</li>
+        <li>@Html.ActionLink("Delete Role To User", "DeleteRoleToUser", "UserRole")</li>
+    </ul>
+    
+</div>

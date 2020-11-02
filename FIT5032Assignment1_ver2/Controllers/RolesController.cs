@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace FIT5032Assignment1_ver2.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class RolesController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -21,7 +22,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // Get : Create
-
+        
         public ActionResult Create() 
         {
             return View();
@@ -30,6 +31,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         // Get : Create new Role
 
         [HttpPost]
+        
         [ValidateAntiForgeryToken]
         public ActionResult Create(FormCollection fromCollection) 
         {
@@ -50,7 +52,7 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // Get : Edit
-
+        
         public ActionResult Edit(String roleName)
         {
             var role = db.Roles.Where(r => r.Name.Equals(roleName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();
@@ -59,6 +61,7 @@ namespace FIT5032Assignment1_ver2.Controllers
 
         // Post : Edit Role
         [HttpPost]
+        
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Microsoft.AspNet.Identity.EntityFramework.IdentityRole role) 
         {
@@ -74,6 +77,7 @@ namespace FIT5032Assignment1_ver2.Controllers
             }
         }
 
+        
         public ActionResult Delete(String roleName) 
         {
             var role = db.Roles.Where(r => r.Name.Equals(roleName, StringComparison.CurrentCultureIgnoreCase)).FirstOrDefault();

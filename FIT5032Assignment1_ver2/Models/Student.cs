@@ -11,8 +11,9 @@ namespace FIT5032Assignment1_ver2.Models
         public int Id { get; set; }
 
         [Required]
+        [StringLength(60,MinimumLength = 3)]
         public String Name { get; set; }
-
+        [Required]
         public String Email { get; set; }
 
         public String PhoneNo { get; set; }

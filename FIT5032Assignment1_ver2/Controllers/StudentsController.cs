@@ -10,6 +10,7 @@ using FIT5032Assignment1_ver2.Models;
 
 namespace FIT5032Assignment1_ver2.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class StudentsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -36,27 +37,27 @@ namespace FIT5032Assignment1_ver2.Controllers
         }
 
         // GET: Students/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: Students/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Email,PhoneNo")] Student student)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Student.Add(student);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "Id,Name,Email,PhoneNo")] Student student)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Student.Add(student);
+         //       db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(student);
-        }
+        //    return View(student);
+        //}
 
         // GET: Students/Edit/5
         public ActionResult Edit(int? id)

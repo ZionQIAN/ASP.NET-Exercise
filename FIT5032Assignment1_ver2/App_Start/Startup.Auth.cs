@@ -63,6 +63,11 @@ namespace FIT5032Assignment1_ver2
             //    ClientId = "",
             //    ClientSecret = ""
             //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "412604931622-pp5tg07l06c0oougpbeshvp0o3l70r40.apps.googleusercontent.com",
+                ClientSecret = "u9myBaRq3cGIrEmr_zbUVpyS"
+            });
         }
     }
 }
