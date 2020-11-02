@@ -1,0 +1,36 @@
+E:\Visual Studio repository\FirstAPI\bin\Debug\netcoreapp2.1\appsettings.Development.json
+E:\Visual Studio repository\FirstAPI\bin\Debug\netcoreapp2.1\appsettings.json
+E:\Visual Studio repository\FirstAPI\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+E:\Visual Studio repository\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.deps.json
+E:\Visual Studio repository\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.runtimeconfig.json
+E:\Visual Studio repository\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.runtimeconfig.dev.json
+E:\Visual Studio repository\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.dll
+E:\Visual Studio repository\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.pdb
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.csprojAssemblyReference.cache
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.AssemblyInfoInputs.cache
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.AssemblyInfo.cs
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.csproj.CoreCompileInputs.cache
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.RazorAssemblyInfo.cache
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.RazorAssemblyInfo.cs
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.RazorTargetAssemblyInfo.cache
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.dll
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.pdb
+E:\Visual Studio repository\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.genruntimeconfig.cache
+C:\Users\crono\Desktop\New folder\FirstAPI\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\crono\Desktop\New folder\FirstAPI\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\crono\Desktop\New folder\FirstAPI\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+C:\Users\crono\Desktop\New folder\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.deps.json
+C:\Users\crono\Desktop\New folder\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.runtimeconfig.json
+C:\Users\crono\Desktop\New folder\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.runtimeconfig.dev.json
+C:\Users\crono\Desktop\New folder\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.dll
+C:\Users\crono\Desktop\New folder\FirstAPI\bin\Debug\netcoreapp2.1\FirstAPI.pdb
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.csprojAssemblyReference.cache
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.AssemblyInfoInputs.cache
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.AssemblyInfo.cs
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.csproj.CoreCompileInputs.cache
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.RazorAssemblyInfo.cache
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.RazorAssemblyInfo.cs
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.RazorTargetAssemblyInfo.cache
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.dll
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.pdb
+C:\Users\crono\Desktop\New folder\FirstAPI\obj\Debug\netcoreapp2.1\FirstAPI.genruntimeconfig.cache
