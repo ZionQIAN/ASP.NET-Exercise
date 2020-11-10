@@ -28,9 +28,9 @@
 
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("CourseEvent", "Index", "CourseEvents")</li>
-                        <li>@Html.ActionLink("LikedCourses", "Index", "LikeCourses")</li>
-                        <li>@Html.ActionLink("LoginedCourses", "Index", "LoginedCourses")</li>
+                        <li>@Html.ActionLink("Course Event", "Index", "CourseEvents")</li>
+                        <li>@Html.ActionLink("Liked Courses", "Index", "LikeCourses")</li>
+                        <li>@Html.ActionLink("Logined Courses", "UserLoginCourse", "LoginedCourse")</li>
                     }
 
                     @if (User.Identity.IsAuthenticated)

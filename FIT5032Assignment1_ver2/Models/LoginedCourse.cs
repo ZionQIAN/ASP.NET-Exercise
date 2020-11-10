@@ -13,8 +13,8 @@ namespace FIT5032Assignment1_ver2.Models
 
         public int CourseId { get; set; }
 
-        public Student Student { get; set; }
+        public ApplicationUser ApplicationUser { get; set; }
 
-        public int StudentId { get; set; }
+        public String ApplicationUserId { get; set; }
     }
 }

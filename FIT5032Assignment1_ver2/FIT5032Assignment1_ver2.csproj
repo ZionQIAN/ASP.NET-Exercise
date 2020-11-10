@@ -133,6 +133,12 @@
     <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
     </Reference>
+    <Reference Include="SendGrid, Version=9.21.1.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>packages\SendGrid.9.21.1\lib\net452\SendGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="StarkbankEcdsa, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\starkbank-ecdsa.1.2.0\lib\net452\StarkbankEcdsa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
@@ -158,6 +164,7 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Runtime.CompilerServices.Unsafe.4.5.1\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security.Principal.Windows, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>packages\System.Security.Principal.Windows.4.5.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
     </Reference>
@@ -294,7 +301,7 @@
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LikeCoursesController.cs" />
-    <Compile Include="Controllers\LoginedCoursesController.cs" />
+    <Compile Include="Controllers\LoginedCourseController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
     <Compile Include="Controllers\StudentsController.cs" />
@@ -326,6 +333,10 @@
     <Compile Include="Migrations\202011020135273_updateValidation.Designer.cs">
       <DependentUpon>202011020135273_updateValidation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011100415158_changeLoginedCourse.cs" />
+    <Compile Include="Migrations\202011100415158_changeLoginedCourse.Designer.cs">
+      <DependentUpon>202011100415158_changeLoginedCourse.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Course.cs" />
@@ -335,9 +346,11 @@
     <Compile Include="Models\LikeCourse.cs" />
     <Compile Include="Models\LoginedCourse.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SendEmailViewModel.cs" />
     <Compile Include="Models\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utils\EmailSend.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -598,6 +611,7 @@
     <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.js" />
     <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\googleMap.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -608,6 +622,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Style\CourseEvent.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -651,11 +666,6 @@
     <Content Include="Views\LikeCourses\Details.cshtml" />
     <Content Include="Views\LikeCourses\Edit.cshtml" />
     <Content Include="Views\LikeCourses\Index.cshtml" />
-    <Content Include="Views\LoginedCourses\Create.cshtml" />
-    <Content Include="Views\LoginedCourses\Delete.cshtml" />
-    <Content Include="Views\LoginedCourses\Details.cshtml" />
-    <Content Include="Views\LoginedCourses\Edit.cshtml" />
-    <Content Include="Views\LoginedCourses\Index.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Delete.cshtml" />
     <Content Include="Views\Courses\Details.cshtml" />
@@ -677,6 +687,8 @@
     <Content Include="Views\UserRole\GetUserRoles.cshtml" />
     <Content Include="Views\UserRole\DeleteRoleToUser.cshtml" />
     <Content Include="Views\UserRole\Index.cshtml" />
+    <Content Include="Views\LoginedCourse\index.cshtml" />
+    <Content Include="Views\LoginedCourse\UserLoginCourse.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -712,6 +724,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011020135273_updateValidation.resx">
       <DependentUpon>202011020135273_updateValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011100415158_changeLoginedCourse.resx">
+      <DependentUpon>202011100415158_changeLoginedCourse.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -4,8 +4,56 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBuKNWWmF9OUUvYayIm3Z92Seug0ps7fEU&callback=initMap&libraries=places&v=weekly"
+        defer></script>
+<style>
+    #map {
+        height: 600px;
+    }
+
+    #pac-input {
+        background-color: #fff;
+        font-family: Roboto;
+        font-size: 15px;
+        font-weight: 300;
+        margin-left: 12px;
+        padding: 0 11px 0 13px;
+        text-overflow: ellipsis;
+        width: 400px;
+    }
+
+        #pac-input:focus {
+            border-color: #4d90fe;
+        }
+</style>
 
 <h2>Index</h2>
+<div id="floating-panel1">
+    <b>Start destination: </b>
+    <input id="userInput" type="text" placeholder="Enter a location" /><br />
+    <b>End destination: </b>
+    <select id="end">
+        @foreach (var item in Model)
+        {
+            <option value="@item.Address">@item.Event.EventName</option>
+        }
+    </select><br />
+    <button id="Direction">Get Direction</button>
+</div>
+
+<div id="floating-panel2">
+    <input id="address" type="text" placeholder="Enter a location" />
+    <input id="submit" type="button" value="Search location" />
+</div>
+
+<div class="row">
+    <div class="col-md-9">
+        <div id="map"></div>
+    </div>
+    <div class="col-md-3"><div id="right-panel" style="max-height: 700px"></div></div>
+
+</div>
 
 @if (User.Identity.IsAuthenticated)
 {
@@ -72,3 +120,5 @@
 }
 <link href="~/Content/DataTables/css/dataTables.bootstrap.min.css"
       rel="stylesheet" />
+
+<script src="~/Scripts/googleMap.js"></script>

@@ -124,6 +124,12 @@ namespace FIT5032Assignment1_ver2.Controllers
             return RedirectToAction("Index");
         }
 
+        public JsonResult GetCourseEvents() 
+        {
+            var courseEvents = db.CourseEvents.ToList();
+            return new JsonResult { Data = courseEvents, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
